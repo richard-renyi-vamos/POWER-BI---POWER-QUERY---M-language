@@ -1,0 +1,6 @@
+let
+    Source = [Your Source Step Here],  // This is the step where you load your data.
+    ReplacedLBU = Table.TransformColumns(Source, 
+        {{"LBU", each if [Customer] = "BARCLAYS" then "GB" else _}})
+in
+    ReplacedLBU
